@@ -1,24 +1,21 @@
 package testcases;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class HomeLoanTest extends BaseClass{
+public class HomeLoanTest extends BaseClass {
 
-	
-
-	//@Test(enabled=false)
-	@Test
+	// @Test(enabled=false)
+	@Test(dependsOnMethods = "test2", groups = { "sanity" })
+	// @Test
 	public void test1() {
+	//	test2();
 		System.out.println("Inside homeloan test1");
 	}
 
-	@Test
+	
+	@Test(groups = { "sanity","regression" })
 	public void test2() {
 		System.out.println("Inside homeloan test2");
-	}
-
+	}	
+	
 }
